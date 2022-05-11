@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <TITLE>基本統計量</title>
+    <style>
+        #form02{
+         color: red;
+         }
+        h4{
+         color: blue;
+         }
+    </style>
+</head>
+      <body>
+      <form id="form01">
+          <label>帶輸入的資料個數為</label>
+          <input type="number" name="number01" placeholder="0"><br>
+      </form>
+      <button onclick="inputNo()"> 產生輸入表格</button>
+      <div id="demo01"></div>
+      <div id="demo02"></div>
+      <script>
+          var no =0 ;
+          function inputNo(){
+           const x=document.getElementById("form01");
+           var item=x.elements[0].value;
+           no = item;
+           text01 ="<form id =\"form02\">";
+           for(i=1;i<=item;i++){
+               text01 += i +". ";
+               text01 += "<input type=\"text\">" + "<br>;
+            }
+            text01 += "</form>";
+            text01 += "<button onclick=\"stat()\">計算統計量</button>";
+            document.getElementById("demo01").innerHTML = text01;
+            }
+            function stat(){
+             const y =document.getElementById("form02");
+             var sum - 0;
+             var sum01= 0;
+             text02 = "";
+             for(i=0;i<no;i++){
+               sum +=Number(y.elements[i].value);
+               sum01 += Math.pow(Number(y.elements[i].value),2);
+               text02 += "第" +(i+1) +"個數值為" + y.elements[i].value + "<br>";
+           }
+            text02 += "<br>";
+            text02 += "<h4>這" + no + "個數的平均數為" + sum / no +"<h4>";
+            text02 += "<h4>這" + no + "個數的標準差為" ＋Math.sqrt((sum01-sum*/no)/(no-1)) +"<h4>" ;
+            document.getElementById("demo02").innerHtml = text02;
+           }
+
+ </script>
+      </body>
+</html>
+
